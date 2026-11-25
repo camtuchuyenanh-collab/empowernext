@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmpowerNext | Women in Vietnam's Clean Energy Transition</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldEnergy: '#0F4C3A',
+            emeraldDark: '#0A3528',
+            sageMint: '#E8F3EE',
+            sageBorder: '#C7E0D4',
+            solarGold: '#D97706',
+            solarLight: '#FEF3C7',
+            offWhite: '#FAF9F6',
+            charcoal: '#1E293B',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF9F6;
+      color: #1E293B;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    /* Custom scrollbar for clean editorial look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0F4C3A;
+    }
+    .article-prose p {
+      margin-bottom: 1.15rem;
+      line-height: 1.8;
+      color: #334155;
+      font-size: 1.03rem;
+    }
+    .article-prose h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: #0F4C3A;
+      margin-top: 2.1rem;
+      margin-bottom: 0.85rem;
+      scroll-margin-top: 6rem;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-emeraldEnergy selection:text-white">
+
+  <!-- Toast Notification Banner -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300 translate-y-2 opacity-0">
+    <div class="bg-emeraldEnergy text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 border border-emerald-700">
+      <svg class="w-5 h-5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-offWhite/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between py-3.5 gap-3">
+        <!-- Brand Logo -->
+        <div class="flex items-center justify-between">
+          <button onclick="switchTab('home')" class="flex items-center gap-3 text-left group">
+            <div class="w-10 h-10 rounded-xl bg-emeraldEnergy flex items-center justify-center text-white shadow-sm group-hover:bg-emeraldDark transition">
+              <svg class="w-6 h-6 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <span class="font-editorial font-bold text-xl tracking-tight text-emeraldEnergy block leading-none">EmpowerNext</span>
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mt-1 block">Vietnam Clean Energy Career Hub</span>
+            </div>
+          </button>
+
+          <!-- Mobile Quick CTA -->
+          <button onclick="openArticle(1)" class="md:hidden bg-emeraldEnergy text-white text-xs font-semibold px-3.5 py-2 rounded-lg shadow-sm">
+            Start Reading
+          </button>
+        </div>
+
+        <!-- Nav Links & Search -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-4 justify-between md:justify-end">
+          <nav class="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-1 md:pb-0">
+            <button data-nav="home" onclick="switchTab('home')" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold bg-emeraldEnergy text-white transition">
+              Home &amp; Pathway
+            </button>
+            <button data-nav="library" onclick="switchTab('library')" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-sageMint hover:text-emeraldEnergy transition">
+              24-Article Library
+            </button>
+            <button data-nav="tools" onclick="switchTab('tools')" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-sageMint hover:text-emeraldEnergy transition">
+              Career Tools
+            </button>
+            <button data-nav="glossary" onclick="switchTab('glossary')" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-sageMint hover:text-emeraldEnergy transition">
+              Glossary (A–Z)
+            </button>
+          </nav>
+
+          <!-- Global Instant Search -->
+          <div class="relative w-full sm:w-56 lg:w-64">
+            <input
+              type="text"
+              id="global-search"
+              placeholder="Search articles, PPA, ESG..."
+              oninput="handleGlobalSearch(this.value)"
+              class="w-full pl-9 pr-3 py-2 text-sm bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-emeraldEnergy focus:ring-2 focus:ring-emeraldEnergy/15 transition"
+            />
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main id="main-container">
+
+    <!-- ==================== TAB 1: HOME & PATHWAY ==================== -->
+    <section id="tab-home" class="tab-section">
+      <!-- Hero Section -->
+      <div class="relative overflow-hidden bg-gradient-to-b from-sageMint/80 via-offWhite to-offWhite border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sageBorder text-emeraldEnergy text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-solarGold"></span>
+              Open-Access Research &amp; Career Publication
+            </div>
+            <h1 class="font-editorial text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold text-emeraldEnergy leading-[1.15] tracking-tight mb-6">
+              Empowering Young Vietnamese Women to Lead the Clean Energy Transition
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+              Global evidence shows that over <strong class="text-charcoal font-semibold">45% of non-technical functions</strong> in renewable energy—spanning finance, law, project development, procurement, and ESG—are held by women. No engineering degree is required to start, alongside dedicated career pathways for female engineers and entrepreneurs.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <button onclick="openArticle(1)" class="px-6 py-3.5 rounded-xl bg-emeraldEnergy hover:bg-emeraldDark text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition flex items-center gap-2">
+                <span>Start Reading Article 1</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+              <a href="#pathway-section" class="px-6 py-3.5 rounded-xl bg-white hover:bg-sageMint text-emeraldEnergy border border-sageBorder font-semibold text-sm sm:text-base transition">
+                Explore 6-Month Pathway
+              </a>
+            </div>
+          </div>
+
+          <!-- Key Stat Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-editorial font-bold text-emeraldEnergy">24 Guides</div>
+              <div class="text-sm font-semibold text-charcoal mt-1">Research-Backed Articles</div>
+              <p class="text-xs text-slate-500 mt-1">Plain-English explanations with defined industry terminologies.</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-editorial font-bold text-emeraldEnergy">6 Months</div>
+              <div class="text-sm font-semibold text-charcoal mt-1">Structured Learning Pathway</div>
+              <p class="text-xs text-slate-500 mt-1">From university entry &amp; internships to leadership &amp; SME ownership.</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-editorial font-bold text-solarGold">45%+ Share</div>
+              <div class="text-sm font-semibold text-charcoal mt-1">Non-STEM Women Workforce</div>
+              <p class="text-xs text-slate-500 mt-1">IRENA benchmark across commercial, legal, finance, and ESG roles.</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-editorial font-bold text-emeraldEnergy">100% Free</div>
+              <div class="text-sm font-semibold text-charcoal mt-1">Open-Access Toolkits</div>
+              <p class="text-xs text-slate-500 mt-1">Interactive CV builders, interview checklists &amp; policy briefs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6-Month Structured Pathway -->
+      <div id="pathway-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-solarGold">Step-by-Step Curriculum</span>
+            <h2 class="font-editorial text-2xl sm:text-4xl font-bold text-emeraldEnergy mt-1">The 6-Month Clean Energy Pathway</h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
+              Follow the series chronologically or jump directly to the stage that matches your current academic, career, or entrepreneurial goals.
+            </p>
+          </div>
+          <button onclick="switchTab('library')" class="text-sm font-semibold text-emeraldEnergy hover:text-emeraldDark underline underline-offset-4 self-start md:self-auto">
+            Browse All 24 Articles with Filters →
+          </button>
+        </div>
+
+        <div id="pathway-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Featured Interactive Tools Preview Banner -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-emeraldEnergy rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
+              Practical Student &amp; HR Worksheets
+            </span>
+            <h3 class="font-editorial text-2xl sm:text-3xl font-bold leading-snug">
+              Turn University Club &amp; Coursework Experience Into Energy-Sector Resume Bullets
+            </h3>
+            <p class="text-emerald-100 text-sm sm:text-base mt-3 leading-relaxed">
+              Use our interactive <strong>Skills-to-Evidence Resume Builder</strong> and <strong>Applicant Interview Verification Checklist</strong> to prepare standout applications for solar, wind, and ESG employers in Vietnam.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3 shrink-0">
+            <button onclick="switchTab('tools')" class="px-6 py-3.5 rounded-xl bg-solarGold hover:bg-amber-600 text-white font-semibold text-sm shadow-md transition">
+              Open Career Tools
+            </button>
+            <button onclick="switchTab('glossary')" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-sm transition">
+              Explore A–Z Glossary
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: 24-ARTICLE LIBRARY ==================== -->
+    <section id="tab-library" class="tab-section hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-solarGold">Complete Publication Archive</span>
+          <h1 class="font-editorial text-3xl sm:text-4xl font-bold text-emeraldEnergy mt-1">24-Article Editorial Library</h1>
+          <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
+            Every article includes structured industry tables, actionable checklists, a plain-English <strong>Key Terminologies Explained</strong> box, and transparent research scope notes.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm mb-8 space-y-4">
+          <!-- Month Filter Pills -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">Filter by Series Stage (Months 1–6)</label>
+            <div id="month-filters" class="flex flex-wrap gap-2">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- Audience Filter Pills + Result Count -->
+          <div class="pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Filter by Target Reader</label>
+              <div id="audience-filters" class="flex flex-wrap gap-2">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+            <div class="text-sm font-semibold text-emeraldEnergy bg-sageMint px-4 py-2 rounded-xl self-start sm:self-end">
+              Showing <span id="article-count">24</span> of 24 articles
+            </div>
+          </div>
+        </div>
+
+        <!-- Article Cards Grid -->
+        <div id="library-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="library-empty" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200">
+          <p class="font-editorial text-xl font-bold text-slate-700">No matching articles found</p>
+          <p class="text-sm text-slate-500 mt-1">Try clearing your search term or resetting the Month/Audience filters.</p>
+          <button onclick="resetFilters()" class="mt-4 px-5 py-2.5 rounded-xl bg-emeraldEnergy text-white text-sm font-semibold">
+            Reset All Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: CAREER TOOLS & WORKSHEETS ==================== -->
+    <section id="tab-tools" class="tab-section hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-solarGold">Interactive Student &amp; Applicant Toolkits</span>
+          <h1 class="font-editorial text-3xl sm:text-4xl font-bold text-emeraldEnergy mt-1">Career Tools &amp; Action Worksheets</h1>
+          <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
+            Adapted directly from Articles 2, 3, and 4 to help female graduates translate academic achievements into verifiable energy-sector credentials.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Tool 1: Skills-to-Evidence Resume Builder -->
+          <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="px-3 py-1 rounded-full bg-sageMint text-emeraldEnergy text-xs font-bold">From Article 2</span>
+              <span class="text-xs text-slate-400 font-medium">Interactive Generator</span>
+            </div>
+            <h2 class="font-editorial text-2xl font-bold text-charcoal">Skills-to-Evidence Resume Bullet Builder</h2>
+            <p class="text-sm text-slate-600 mt-1 mb-6">
+              Energy hiring managers look for quantified proof rather than generic soft skills. Select a target competency, enter your university or club project details, and generate a tailored CV bullet.
+            </p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">1. Target Energy Competency</label>
+                <select id="tool-skill" onchange="updateResumeBuilderTemplate()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-offWhite text-sm font-medium focus:outline-none focus:border-emeraldEnergy">
+                  <option value="data">Data Analysis &amp; Reporting (Excel / Power BI)</option>
+                  <option value="policy">Policy &amp; Regulatory Analysis (PDP8 / DPPA)</option>
+                  <option value="coord">Project &amp; Resource Coordination (GANTT / Budget)</option>
+                  <option value="esg">ESG &amp; Sustainability Communications (GRI / Outreach)</option>
+                </select>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">2. Your Context / Project</label>
+                  <input id="tool-context" type="text" placeholder="e.g., senior thesis survey" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emeraldEnergy" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">3. Quantified Scope / Metric</label>
+                  <input id="tool-metric" type="text" placeholder="e.g., 120 households / 25M VND" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emeraldEnergy" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">4. Concrete Deliverable / Outcome</label>
+                <input id="tool-outcome" type="text" placeholder="e.g., 3 actionable rooftop solar payback recommendations" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emeraldEnergy" />
+              </div>
+
+              <div class="pt-2">
+                <button onclick="generateResumeBullet()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emeraldEnergy hover:bg-emeraldDark text-white font-semibold text-sm transition shadow-sm">
+                  Generate Verified CV Bullet
+                </button>
+              </div>
+
+              <!-- Output Box -->
+              <div class="mt-6 p-5 rounded-2xl bg-sageMint/70 border border-sageBorder">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-emeraldEnergy">Your Resume-Ready Statement</span>
+                  <button onclick="copyTextById('resume-output')" class="text-xs font-bold text-emeraldEnergy hover:underline flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy Bullet
+                  </button>
+                </div>
+                <p id="resume-output" class="text-sm sm:text-base font-medium text-charcoal leading-relaxed">
+                  "Constructed an Excel dataset analyzing electricity consumption patterns across 100 households for a senior research study, generating 3 actionable energy-saving recommendations."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tool 2: Applicant Readiness & Interview Verification Checklist -->
+          <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="px-3 py-1 rounded-full bg-solarLight text-solarGold text-xs font-bold">From Articles 3 &amp; 4</span>
+                <span id="checklist-progress-text" class="text-xs font-bold text-emeraldEnergy">0 / 7 Completed</span>
+              </div>
+              <h2 class="font-editorial text-2xl font-bold text-charcoal">Applicant &amp; Interview Readiness Checklist</h2>
+              <p class="text-sm text-slate-600 mt-1 mb-4">
+                Track your preparation before applying or accepting an energy internship or entry-level offer.
+              </p>
+
+              <!-- Progress Bar -->
+              <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden mb-5">
+                <div id="checklist-progress-bar" class="h-full bg-emeraldEnergy transition-all duration-300" style="width: 0%"></div>
+              </div>
+
+              <div id="interactive-checklist" class="space-y-3">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <button onclick="resetChecklist()" class="text-xs font-semibold text-slate-500 hover:text-charcoal">Reset Progress</button>
+              <button onclick="copyInterviewQuestions()" class="px-4 py-2 rounded-xl bg-sageMint hover:bg-sageBorder/60 text-emeraldEnergy text-xs font-bold transition">
+                Copy 4 HR Interview Questions
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: ENERGY GLOSSARY (A-Z) ==================== -->
+    <section id="tab-glossary" class="tab-section hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-solarGold">Plain-English Industry Dictionary</span>
+            <h1 class="font-editorial text-3xl sm:text-4xl font-bold text-emeraldEnergy mt-1">Clean Energy Glossary (A–Z)</h1>
+            <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
+              Every technical, financial, legal, and safety term used across all 24 articles—explained clearly for students and professionals from any background.
+            </p>
+          </div>
+          <div class="w-full md:w-72">
+            <input
+              type="text"
+              id="glossary-search"
+              oninput="renderGlossary(this.value)"
+              placeholder="Filter terms (e.g., PPA, DSCR, PPE)..."
+              class="w-full px-4 py-2.5 text-sm bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-emeraldEnergy"
+            />
+          </div>
+        </div>
+
+        <div id="glossary-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FULL ARTICLE READER MODAL ==================== -->
+  <div id="article-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/60 backdrop-blur-sm">
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 h-1.5 bg-slate-200 z-50">
+      <div id="reader-progress" class="h-full bg-solarGold transition-all duration-150" style="width: 0%"></div>
+    </div>
+
+    <div class="min-h-screen px-2 sm:px-6 py-4 sm:py-8 flex justify-center">
+      <div class="bg-offWhite w-full max-w-6xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col">
+        <!-- Modal Top Bar -->
+        <div class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3 min-w-0">
+            <span id="modal-badge" class="px-3 py-1 rounded-full bg-sageMint text-emeraldEnergy text-xs font-bold shrink-0">Month 1 • Article 1</span>
+            <span id="modal-sticky-title" class="text-sm font-semibold text-slate-600 truncate hidden sm:block">Article Title</span>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="prev-article-btn" onclick="navigateArticle(-1)" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-xs font-semibold text-slate-700 disabled:opacity-40">
+              ← Prev
+            </button>
+            <button id="next-article-btn" onclick="navigateArticle(1)" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-xs font-semibold text-slate-700 disabled:opacity-40">
+              Next →
+            </button>
+            <button onclick="closeArticle()" class="ml-2 p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition" aria-label="Close reader">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reader Body Layout (Sidebar TOC + Article Content) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-5 sm:p-10">
+          <!-- Sticky Table of Contents (Desktop) -->
+          <aside class="hidden lg:block lg:col-span-3">
+            <div class="sticky top-24 space-y-6">
+              <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">In This Article</div>
+                <ul id="modal-toc" class="space-y-2.5 text-sm">
+                  <!-- Populated via JS -->
+                </ul>
+              </div>
+
+              <div class="bg-sageMint/70 p-4 rounded-2xl border border-sageBorder">
+                <div class="text-xs font-bold text-emeraldEnergy mb-1">Need Quick Definitions?</div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Scroll to the bottom box for plain-English definitions of every technical term used here.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Editorial Column -->
+          <article class="lg:col-span-9 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/80 shadow-sm">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 mb-4">
+              <span id="modal-audience" class="px-2.5 py-1 rounded-md bg-amber-50 text-solarGold border border-amber-200/70">Target Audience</span>
+              <span>•</span>
+              <span id="modal-readtime">6 min read</span>
+              <span>•</span>
+              <span>By EmpowerNext Editorial Team</span>
+            </div>
+
+            <h1 id="modal-title" class="font-editorial text-2xl sm:text-4xl font-extrabold text-emeraldEnergy leading-tight mb-6">
+              Article Title
+            </h1>
+
+            <!-- Dynamic Article Body -->
+            <div id="modal-content" class="article-prose">
+              <!-- Populated via JS -->
+            </div>
+
+            <!-- Key Terminologies Explained Box -->
+            <div id="modal-terms-box" class="mt-10 p-6 sm:p-7 rounded-2xl bg-sageMint/75 border border-sageBorder">
+              <div class="flex items-center gap-2.5 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-emeraldEnergy text-white flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h4 class="font-editorial text-xl font-bold text-emeraldEnergy">Key Terminologies Explained</h4>
+              </div>
+              <dl id="modal-terms-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Populated via JS -->
+              </dl>
+            </div>
+
+            <!-- Scope & Research Note -->
+            <div class="mt-6 p-5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <strong class="text-charcoal font-bold">Scope &amp; Research Note:</strong>
+              <span id="modal-note">Research boundary note goes here.</span>
+            </div>
+
+            <!-- Bottom Article Navigation -->
+            <div class="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <button id="bottom-prev-btn" onclick="navigateArticle(-1)" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-sm font-semibold text-slate-700 disabled:opacity-40">
+                ← Previous Article
+              </button>
+              <button onclick="closeArticle()" class="text-sm font-semibold text-emeraldEnergy hover:underline">
+                Back to Library
+              </button>
+              <button id="bottom-next-btn" onclick="navigateArticle(1)" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-emeraldEnergy hover:bg-emeraldDark text-white text-sm font-semibold disabled:opacity-40">
+                Next Article →
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-emeraldDark text-emerald-100/80 border-t border-emerald-900 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="font-editorial text-xl font-bold text-white">EmpowerNext</div>
+          <p class="text-sm mt-2 leading-relaxed text-emerald-200/80">
+            An open-access research and career resource hub dedicated to expanding young Vietnamese women's participation and leadership in the clean energy sector.
+          </p>
+        </div>
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-3">Quick Navigation</div>
+          <ul class="space-y-2 text-sm">
+            <li><button onclick="switchTab('home')" class="hover:text-white transition">6-Month Learning Pathway</button></li>
+            <li><button onclick="switchTab('library')" class="hover:text-white transition">Complete 24-Article Series</button></li>
+            <li><button onclick="switchTab('tools')" class="hover:text-white transition">Resume Builder &amp; Checklists</button></li>
+            <li><button onclick="switchTab('glossary')" class="hover:text-white transition">A–Z Clean Energy Glossary</button></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-3">Research Standards</div>
+          <p class="text-xs leading-relaxed text-emerald-200/75">
+            Grounded in International Renewable Energy Agency (IRENA) gender benchmarks, OSHA/ILO occupational safety standards, and structured audits of Vietnam's renewable energy ecosystem.
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-emerald-800/70 text-xs text-emerald-300/60 flex flex-col sm:flex-row justify-between gap-2">
+        <span>© 2026 EmpowerNext Research &amp; Career Hub. Open-Access Educational Resource.</span>
+        <span>Built for Mobile &amp; Desktop Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT DATA & INTERACTIVITY ==================== -->
+  <script>
+    // 1. MONTH METADATA
+    const MONTHS = [
+      { id: 1, label: "Month 1: Entry Paths", shortTitle: "Where Women Can Enter the Energy Sector", desc: "Career maps for non-engineering graduates, skills-to-evidence translation, internship matrices, and decoding job ads." },
+      { id: 2, label: "Month 2: Real Roles", shortTitle: "What Women Actually Do in Energy Businesses", desc: "Inside project development, project finance, equipment procurement & supply chain, and first technical engineering roles." },
+      { id: 3, label: "Month 3: Workplace & Safety", shortTitle: "Whether Workplace Arrangements Support Women", desc: "Site travel logistics, female-fitted PPE safety standards, family care schedules, and corporate disclosure audits." },
+      { id: 4, label: "Month 4: Leadership", shortTitle: "How Women Progress and Gain Leadership", desc: "Staff-to-management pathways, high-stakes project visibility, mentorship vs. sponsorship, and leadership reporting." },
+      { id: 5, label: "Month 5: Women Entrepreneurs", shortTitle: "Women as Business Owners & Service Providers", desc: "SME entry points in the energy value chain, Net-60/90 working capital management, vendor approval, and B2B networks." },
+      { id: 6, label: "Month 6: Pilot & Policy", shortTitle: "Test a Practical Response for Young Women", desc: "Student information gaps, pre/post career guide pilot results, model internships, and 3-pillar policy recommendations." }
+    ];
+
+    // 2. COMPLETE 24 ARTICLES DATASET (Full, structured, publication-ready)
+    const ARTICLES = [
+      {
+        id: 1,
+        month: 1,
+        audience: "Non-STEM Students",
+        readTime: "6 min read",
+        title: "Breaking Into the Energy Sector: Where Can Women Without Engineering Backgrounds Start?",
+        summary: "Discover why over 45% of non-technical energy roles are held by women and explore four concrete entry tracks in business, finance, law, and ESG.",
+        sections: [
+          {
+            heading: "1. Global Evidence & The Vietnam Reality Check",
+            paragraphs: [
+              "When people think of the energy sector, they often picture high-voltage power lines, wind turbine technicians climbing offshore towers, or electrical engineers designing power grids. For female students with degrees in business, finance, law, or communications, the clean energy industry can seem distant. However, international evidence and Vietnam's energy transition tell a very different story.",
+              "According to the International Renewable Energy Agency (IRENA), women represent roughly 32% to 35% of the global renewable energy workforce, yet their share in administrative, legal, policy, and commercial roles exceeds 45%. In Vietnam, utility-scale solar and wind projects depend heavily on land lease clearance, multi-million-dollar project financing, regulatory tracking, and community engagement."
+            ]
+          },
+          {
+            heading: "2. Four Non-Engineering Career Tracks in Vietnam",
+            paragraphs: [
+              "Female graduates outside STEM fields can target four verified operational tracks across solar/wind developers, advisory firms, and equipment suppliers:"
+            ],
+            table: {
+              headers: ["Academic Background", "Target Energy Sub-Sector", "Entry-Level Roles", "Core Daily Responsibilities"],
+              rows: [
+                ["Business / Management", "Renewable Developers & EPCs", "Commercial Assistant / Project Coordinator", "Vendor documentation, milestone tracking, bid submission support."],
+                ["Finance / Economics", "Energy Funds & Asset Developers", "Junior Financial Analyst / Cost Control", "IRR/NPV financial modeling, PPA cash-flow auditing, tariff analysis."],
+                ["Law / Public Policy", "Advisory Firms & Developers", "Legal & Compliance / Permitting Officer", "Land lease clearance, grid-connection licensing, DPPA & PDP8 tracking."],
+                ["Communications / ESG", "Equipment Vendors & Consultancies", "Corporate Sustainability (ESG) Associate", "Sustainability reporting, stakeholder relations, community outreach."]
+              ]
+            }
+          },
+          {
+            heading: "3. Step-by-Step Entry Roadmap for Freshmen & Graduates",
+            paragraphs: [
+              "To build competitive applications before graduation, follow three practical steps:"
+            ],
+            checklist: [
+              "Master 15 baseline energy terms: PPA, DPPA, PDP8, EPC, COD, LCOE, FIT, Curtailment, and MW vs. MWh.",
+              "Build a target list of renewable developers (e.g., EDP Renewables, Mainstream, BCG Energy) and consultancies active in Vietnam.",
+              "Translate general university experience on your CV—reframe 'Event Logistics' as 'Supply Chain & Operations Coordination'."
+            ]
+          }
+        ],
+        terms: [
+          { term: "PPA (Power Purchase Agreement)", def: "A long-term legal contract between an electricity generator and a power buyer defining electricity rates and delivery obligations." },
+          { term: "DPPA (Direct Power Purchase Agreement)", def: "A regulatory mechanism allowing private clean energy generators to sell power directly to commercial and industrial consumers." },
+          { term: "PDP8 (Power Development Plan VIII)", def: "Vietnam's national master plan governing power supply expansion, generation mix, and grid investment targets through 2030." },
+          { term: "EPC (Engineering, Procurement, Construction)", def: "A contracting arrangement where one main contractor handles detailed engineering design, equipment purchasing, and construction." },
+          { term: "COD (Commercial Operation Date)", def: "The official date when a power plant completes testing and begins selling electricity commercially onto the grid." },
+          { term: "LCOE (Levelized Cost of Electricity)", def: "The average total cost of building and operating a power plant per unit of electricity generated over its lifetime." }
+        ],
+        note: "Employer examples and career tracks cited reflect publicly documented job postings and industry structures in Vietnam, serving as illustrative career guides rather than hiring guarantees."
+      },
+      {
+        id: 2,
+        month: 1,
+        audience: "Non-STEM Students",
+        readTime: "6 min read",
+        title: "What Skills Do Female Graduates Need to Stand Out in Energy Applications?",
+        summary: "Learn how to decode real energy job descriptions and convert university coursework into quantified, verifiable evidence on your resume.",
+        sections: [
+          {
+            heading: "1. The Perception & Hiring Evidence Gap",
+            paragraphs: [
+              "IRENA survey findings reveal that 45% of female respondents cite self-perception barriers and lack of career guidance as primary obstacles to entering clean energy. At the same time, 67% of energy employers report critical shortages in entry-level candidates who demonstrate cross-functional communication, analytical adaptability, and practical problem-solving.",
+              "Many fresh graduates rely on generic claims such as 'team player' or 'good communicator'. Energy hiring managers, however, look for concrete proof that you can organize complex data, summarize regulations, and coordinate across departments."
+            ]
+          },
+          {
+            heading: "2. Deconstructing Real Job Description Phrases",
+            paragraphs: [
+              "When an energy job posting asks for 'multi-stakeholder coordination', it means acting as a bridge between site engineers, local permitting authorities, and financial sponsors. When it requests 'policy tracking', it means distilling lengthy decrees like DPPA guidelines into concise 2-page executive notes."
+            ],
+            table: {
+              headers: ["Target HR Skill", "University / Club Experience", "Verified Evidence Statement for CV"],
+              rows: [
+                ["Data Analysis & Reporting", "Senior thesis household survey", "Built an Excel model analyzing electricity use across 100 households, identifying 3 actionable savings measures."],
+                ["Policy & Legal Analysis", "Environmental law coursework", "Authored a 2-page executive brief dissecting Vietnam's DPPA decree for a university symposium."],
+                ["Project Coordination", "Club event logistics lead", "Managed a 10-member team and 20M VND budget via GANTT schedules to deliver a 500-attendee seminar on time."],
+                ["ESG Communications", "Sustainability campaign volunteer", "Created a 5-part carbon footprint awareness series generating over 2,000 organic reader engagements."]
+              ]
+            }
+          },
+          {
+            heading: "3. Three Action Steps Before Submitting Your Application",
+            checklist: [
+              "Create one tangible mini work sample—such as a 2-page policy brief on rooftop solar rules or a simple payback spreadsheet.",
+              "Replace subjective adjectives on your CV with concrete numbers (budgets managed, survey sample sizes, deadlines met).",
+              "Reach out to early-career women in Vietnam's energy sector on LinkedIn for 15-minute informational chats."
+            ]
+          }
+        ],
+        terms: [
+          { term: "GRI (Global Reporting Initiative)", def: "International sustainability reporting standards helping organizations measure and disclose environmental and social impacts." },
+          { term: "ISSB (International Sustainability Standards Board)", def: "A global standard-setting body establishing baseline sustainability and climate disclosure rules for financial markets." },
+          { term: "SIA (Social Impact Assessment)", def: "A structured process for analyzing and managing the social effects of infrastructure projects on local communities." },
+          { term: "GANTT Chart", def: "A visual project management timeline showing tasks, durations, dependencies, and completion milestones." }
+        ],
+        note: "Findings are grounded in published IRENA gender research and job description audits. The Skills-to-Evidence table provides an educational framework for resume building."
+      },
+      {
+        id: 3,
+        month: 1,
+        audience: "Non-STEM Students",
+        readTime: "5 min read",
+        title: "Are Energy Internships Accessible to Female Students?",
+        summary: "Compare internship tracks across commercial, finance, ESG, and legal teams, and use a 5-point checklist to evaluate stipends and conversion potential.",
+        sections: [
+          {
+            heading: "1. Why Internships Are the Primary Entry Bridge",
+            paragraphs: [
+              "Many entry-level energy postings list '1–2 years of experience' as a preference. Structured internships allow 2nd-, 3rd-, and final-year female students in economics, business, law, and environmental studies to gain direct sector exposure before graduation.",
+              "However, accessibility depends on practical factors: whether stipends cover living expenses, whether schedules accommodate university classes, and whether site travel expectations are clearly stated."
+            ]
+          },
+          {
+            heading: "2. Internship Evaluation Matrix Across Non-STEM Tracks",
+            table: {
+              headers: ["Role Track", "Target Majors", "Schedule & Duration", "Typical Allowance & Location", "Full-Time Conversion"],
+              rows: [
+                ["Commercial / BD Intern", "Business Admin, Economics", "3–6 months; Full-time", "3M–5M VND/month; HCMC / Hanoi", "Moderate"],
+                ["Finance / Investment Intern", "Finance, Accounting", "3–4 months; 4–5 days/wk", "4M–6M VND/month; HCMC office", "High"],
+                ["ESG & Sustainability Intern", "Environmental, Comms", "3–6 months; Hybrid (3/2)", "Undisclosed / Negotiable; Hanoi", "Low to Moderate"],
+                ["Legal & Permitting Intern", "Law, Public Policy", "6 months; Full-time", "3M–4M VND/month; HCMC office", "High"]
+              ]
+            }
+          },
+          {
+            heading: "3. Applicant Readiness Checklist",
+            checklist: [
+              "Verify university credit transfer rules and confirm hybrid/part-time flexibility during exam weeks.",
+              "Review core energy terms (PPA, PDP8, and the difference between MW capacity and MWh energy output).",
+              "Prepare a crisp 1-page CV accompanied by a relevant mini work sample.",
+              "Clarify monthly stipend, site visit frequency, and assigned mentorship during HR screening.",
+              "Track major recruitment windows systematically across Q1–Q2 and Q3–Q4 hiring cycles."
+            ]
+          }
+        ],
+        terms: [
+          { term: "MW (Megawatt)", def: "A unit of electrical power equal to one million watts, measuring instantaneous generating capacity." },
+          { term: "MWh (Megawatt-hour)", def: "A unit of electrical energy equal to one megawatt of power generated or used continuously for one hour." },
+          { term: "Conversion Potential", def: "The likelihood that an internship leads to a formal full-time job offer upon graduation." }
+        ],
+        note: "Public job posting audits evaluate advertised internship terms, which may differ from internal selection practices or individual team experiences."
+      },
+      {
+        id: 4,
+        month: 1,
+        audience: "Early-Career & HR",
+        readTime: "6 min read",
+        title: "What Do Energy Job Ads Say — and Leave Out — for Female Candidates?",
+        summary: "See what clean energy job postings typically state versus omit regarding site travel, safety gear, and lodging—plus 4 polite questions to ask in interviews.",
+        sections: [
+          {
+            heading: "1. Stated Requirements vs. Critical Omissions",
+            paragraphs: [
+              "An audit of 40–60 Vietnamese energy job postings shows that while most employers use neutral language, critical operational details are frequently omitted. When site travel frequency, accommodation standards, and safety equipment are left vague, qualified female applicants often self-select out due to safety or work-life uncertainty."
+            ],
+            table: {
+              headers: ["Disclosure Area", "What Ads Typically State", "What Ads Frequently Omit", "Practical Impact on Applicants"],
+              rows: [
+                ["Demographic Phrasing", "'Equal opportunity employer'", "Team gender composition & diversity policies", "Unclear workplace inclusion culture"],
+                ["Field & Site Travel", "'Frequent site visits required'", "Travel percentage (%), trip length, advance notice", "Difficulty planning personal commitments"],
+                ["Working Hours", "'Standard office hours (8 AM–5 PM)'", "Overtime during plant commissioning phases", "Risk of unexpected peak workload"],
+                ["Lodging & Transport", "'Travel allowance provided'", "Private room standards & dedicated site transport", "Personal safety concerns at remote sites"],
+                ["Facilities & PPE", "'Standard health insurance'", "Female-fitted PPE & segregated site sanitation", "Physical discomfort during field visits"]
+              ]
+            }
+          },
+          {
+            heading: "2. Annotated Sample Posting & Transparent Rewrite",
+            paragraphs: [
+              "Good Practice in current ads: 'Degree in Business, Finance, Economics, or Law accepted' (welcomes non-STEM majors). Ambiguous Practice: 'Frequent site travel to Ninh Thuan required; competitive allowance.'",
+              "Transparent Employer Rewrite Model: 'Junior Project Coordinator: 20–30% planned site travel with 1-week advance notice. Dedicated corporate transport, private lockable lodging, and female-fitted safety gear provided. Compensation: 12M–15M VND gross + travel stipend.'"
+            ]
+          },
+          {
+            heading: "3. Four Questions Female Candidates Can Ask in Interviews",
+            checklist: [
+              "Travel Notice: 'What is the expected ratio of site vs. office work, and how much advance notice is given before trips?'",
+              "Site Logistics: 'What arrangements are provided for transport, lodging, and safety gear during field visits?'",
+              "Peak Delivery Support: 'How does the team manage workloads during intensive project commissioning periods?'",
+              "Onboarding Structure: 'What mentorship or training is provided for junior hires joining from non-engineering backgrounds?'"
+            ]
+          }
+        ],
+        terms: [
+          { term: "PPE (Personal Protective Equipment)", def: "Specialized protective gear—such as helmets, safety boots, harnesses, and gloves—worn to prevent workplace injuries." },
+          { term: "Commissioning Phase", def: "The final testing stage before a power plant begins commercial operation, often involving intensive site coordination." }
+        ],
+        note: "Omissions in job ads reflect public disclosure habits rather than proof of discriminatory intent; interviews provide an opportunity to verify actual practices."
+      },
+      {
+        id: 5,
+        month: 2,
+        audience: "Non-STEM Students",
+        readTime: "6 min read",
+        title: "What Does a Woman in Energy Project Development Actually Do?",
+        summary: "Demystify the day-to-day workflow of clean energy project development across four stages—from land scouting to financial close.",
+        sections: [
+          {
+            heading: "1. Transforming Land & Rooftops Into Power Plants",
+            paragraphs: [
+              "Project development is the commercial engine of clean energy. It transforms an early concept—such as an empty land parcel or factory roof—into a permitted, financed, and construction-ready power plant. Rather than engineering blueprints, daily work centers on regulatory permitting, stakeholder diplomacy, contract tracking, and cross-team coordination."
+            ]
+          },
+          {
+            heading: "2. The 4-Stage Project Development Task Map",
+            table: {
+              headers: ["Development Stage", "Core Responsibilities", "Key Stakeholders", "Critical Competencies"],
+              rows: [
+                ["1. Site Scouting & Pre-Feasibility", "Land availability checks, solar/wind resource review, preliminary grid check", "Landowners, technical consultants, GIS mappers", "Geographic & regulatory research, data synthesis"],
+                ["2. Land & Permitting Clearance", "Land lease negotiation, Environmental Impact Assessment (EIA) filings", "Provincial authorities (DOIT, DONRE), legal counsel", "Stakeholder diplomacy, document tracking"],
+                ["3. Grid Connection & PPA", "Power purchase agreement negotiation, grid connection filings with EVN", "EVN grid operators, regulators, corporate off-takers", "Contractual negotiation, policy literacy"],
+                ["4. Financial Close & Handover", "Lender due diligence support, EPC contract finalization, construction handover", "Project finance banks, EPC contractors, site leads", "Cross-functional coordination, diligence tracking"]
+              ]
+            }
+          },
+          {
+            heading: "3. Master Project Milestone Checklist",
+            checklist: [
+              "Site Control: Land lease contracts executed, land-use conversion approved, and boundary surveys verified.",
+              "Environmental & Social Clearances: Environmental Impact Assessment (EIA) and local community consultations signed off.",
+              "Grid Interconnection: Grid impact study approved and substation connection agreement secured.",
+              "Commercial Off-Take: Executed PPA or corporate DPPA contract and tariff approval finalized."
+            ]
+          }
+        ],
+        terms: [
+          { term: "EIA (Environmental Impact Assessment)", def: "A mandatory regulatory study evaluating the environmental effects of a proposed energy project prior to construction approval." },
+          { term: "DOIT / DONRE", def: "Provincial Department of Industry and Trade / Department of Natural Resources and Environment in Vietnam." },
+          { term: "Financial Close", def: "The milestone when all project agreements and loan contracts are signed, allowing construction funds to be drawn." }
+        ],
+        note: "Permitting sequences vary by province, technology, and project capacity in Vietnam; this map represents standard industry practice."
+      },
+      {
+        id: 6,
+        month: 2,
+        audience: "Non-STEM Students",
+        readTime: "6 min read",
+        title: "How Does Finance in Energy Businesses Differ from Other Industries?",
+        summary: "Understand how non-recourse project finance, Special Purpose Vehicles (SPVs), and DSCR modeling set energy finance apart from corporate accounting.",
+        sections: [
+          {
+            heading: "1. Corporate Finance vs. Energy Project Finance",
+            paragraphs: [
+              "In traditional businesses, companies borrow money backed by their overall corporate balance sheet. In utility-scale clean energy, developers establish a legally separate company—called a Special Purpose Vehicle (SPV)—for each power plant. Lenders evaluate whether the power plant's future electricity sales alone can repay the loan."
+            ],
+            table: {
+              headers: ["Financial Dimension", "Standard Corporate Finance", "Energy Project Finance"],
+              rows: [
+                ["Entity Structure", "Parent company balance sheet", "Ring-fenced Special Purpose Vehicle (SPV) per project"],
+                ["Cash-Flow Origin", "Consumer product sales & market cycles", "Long-term Power Purchase Agreements (PPA)"],
+                ["Primary Risk Focus", "Inventory turnover, operating margins", "Grid curtailment risk, DSCR ratios, exchange rates"],
+                ["Debt Structuring", "Full-recourse corporate loans", "Non-recourse debt backed strictly by project cash flows"]
+              ]
+            }
+          },
+          {
+            heading: "2. Illustrative Scenario: 50 MW Solar Farm DSCR Stress Test",
+            paragraphs: [
+              "Consider an illustrative 50 MW solar project financed with 70% bank debt and 30% equity under a 20-year PPA. Financial analysts test how grid curtailment affects the Debt Service Coverage Ratio (DSCR). If transmission congestion reduces electricity sales by 15%, analysts verify whether remaining operating cash flow still covers annual debt payments at a safe bankable buffer (typically 1.20x–1.30x)."
+            ]
+          },
+          {
+            heading: "3. Finance Self-Study Checklist",
+            checklist: [
+              "Build a 20-year Excel project cash-flow model incorporating debt sculpting, taxes, and O&M costs.",
+              "Master core valuation metrics: IRR, NPV, DSCR, and Levelized Cost of Electricity (LCOE).",
+              "Follow Vietnam's evolving electricity tariff regulations and direct power purchase pricing rules."
+            ]
+          }
+        ],
+        terms: [
+          { term: "SPV (Special Purpose Vehicle)", def: "A dedicated subsidiary legal entity created to isolate financial risk and hold a single power project's assets." },
+          { term: "DSCR (Debt Service Coverage Ratio)", def: "Net operating income divided by total debt service; measures whether a project generates enough cash to pay its loans." },
+          { term: "IRR / NPV", def: "Internal Rate of Return and Net Present Value—core metrics measuring long-term investment profitability." },
+          { term: "Non-Recourse Debt", def: "Financing secured solely by project assets and cash flows, shielding the parent company's other assets from seizure." }
+        ],
+        note: "The 50 MW solar project scenario is a simplified educational illustration and does not constitute investment advice."
+      },
+      {
+        id: 7,
+        month: 2,
+        audience: "Non-STEM Students",
+        readTime: "5 min read",
+        title: "What Skills Do Women in Energy Procurement and Supply Chain Need?",
+        summary: "Explore the 5-stage equipment procurement workflow—from auditing Tier-1 solar/wind vendors to managing Incoterms and Factory Acceptance Testing.",
+        sections: [
+          {
+            heading: "1. Sourcing High-Value Energy Equipment",
+            paragraphs: [
+              "Equipment accounts for the largest share of capital expenditure in solar and wind projects. Procurement specialists coordinate technical specifications, negotiate international shipping terms, and verify manufacturing quality so high-voltage transformers, inverters, and turbine components arrive before strict COD deadlines."
+            ]
+          },
+          {
+            heading: "2. The 5-Stage Energy Procurement Workflow",
+            table: {
+              headers: ["Procurement Stage", "Key Tasks & Deliverables", "Core Competencies Needed"],
+              rows: [
+                ["1. Technical Alignment", "Reviewing Bill of Materials (BOM) with engineering leads", "Basic technical literacy, specification translation"],
+                ["2. Vendor Qualification", "Auditing Tier-1 manufacturer lists, financial health & warranties", "Supplier due diligence, risk assessment"],
+                ["3. Contract & Incoterms", "Negotiating DDP/CIF shipping terms, payment milestones & LDs", "Incoterms mastery, commercial negotiation"],
+                ["4. Logistics & Customs", "Managing port clearance and oversized cargo transport permits", "Customs compliance, logistics tracking"],
+                ["5. QA/QC & Site Delivery", "Coordinating Factory Acceptance Testing (FAT) & site handover", "Quality assurance coordination, inventory audit"]
+              ]
+            }
+          },
+          {
+            heading: "3. Entry-Level Buyer Readiness Checklist",
+            checklist: [
+              "Understand key Incoterms (DDP vs. CIF) and exact points where shipping risk transfers from seller to buyer.",
+              "Learn how Factory Acceptance Testing (FAT) and third-party inspections prevent defective equipment shipments.",
+              "Review standard 10-to-25-year performance warranty clauses and Liquidated Damages (LDs) for delivery delays."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Incoterms (DDP / CIF)", def: "International commercial rules defining shipping responsibilities: DDP places all delivery/duty risks on seller; CIF covers cost, insurance, and freight to port." },
+          { term: "FAT (Factory Acceptance Testing)", def: "Pre-shipment equipment testing at the manufacturer's factory to verify compliance with technical contract specs." },
+          { term: "Tier-1 Manufacturer", def: "Equipment makers recognized by banks and independent engineers for proven financial stability and manufacturing quality." }
+        ],
+        note: "Procurement procedures vary depending on project size and whether contracts follow international competitive bidding or direct sourcing."
+      },
+      {
+        id: 8,
+        month: 2,
+        audience: "Female Engineers",
+        readTime: "6 min read",
+        title: "From University Lecture Hall to a Female Engineer's First Technical Role",
+        summary: "Trace the 4-phase transition of female engineering graduates into substations, commissioning teams, and technical sign-off roles.",
+        sections: [
+          {
+            heading: "1. Navigating the Transition to Technical Operations",
+            paragraphs: [
+              "Female graduates in electrical, mechanical, civil, and environmental engineering bring strong analytical training from university labs. Yet moving into operational substations, EPC teams, and O&M roles requires adapting to field safety protocols, contractor coordination, and male-dominated site environments."
+            ]
+          },
+          {
+            heading: "2. The 4-Phase Technical Career Progression Timeline",
+            table: {
+              headers: ["Career Phase", "Technical Milestones", "Key Enablers & Support", "Common Structural Setbacks"],
+              rows: [
+                ["Phase 1: Academic Capstone", "Power system modeling thesis, ETAP/PVSyst proficiency", "Faculty mentorship, industry capstones", "Limited exposure to live commercial sites"],
+                ["Phase 2: Site Internship", "Substation inspection shadowing, SLD auditing", "Designated site mentor, proper PPE fit", "Isolation in male-dominated site camps"],
+                ["Phase 3: Entry Commissioning", "SCADA monitoring, pre-commissioning equipment tests", "Peer engineering networks, safety protocols", "Initial skepticism from contractor crews"],
+                ["Phase 4: Technical Sign-Off", "Independent sub-system commissioning & compliance sign-off", "Management backing, engineering licensing", "Glass ceiling for senior site lead roles"]
+              ]
+            }
+          },
+          {
+            heading: "3. Site Readiness Self-Assessment Checklist",
+            checklist: [
+              "Build hands-on proficiency in industry software tools such as AutoCAD, PVSyst, or ETAP.",
+              "Complete high-voltage electrical safety orientation and lockout/tagout (LOTO) hazard training.",
+              "Practice reading Single-Line Diagrams (SLDs) and equipment commissioning test logs."
+            ]
+          }
+        ],
+        terms: [
+          { term: "SCADA", def: "Supervisory Control and Data Acquisition—software and hardware systems used to monitor and control power plant equipment in real time." },
+          { term: "Single-Line Diagram (SLD)", def: "A simplified electrical blueprint using standardized symbols to represent power system connections." },
+          { term: "PVSyst / ETAP", def: "Industry-standard engineering software used for solar yield simulation (PVSyst) and electrical power system analysis (ETAP)." }
+        ],
+        note: "Case patterns reflect qualitative tracking of early-career female engineers in Vietnam and vary across engineering disciplines and employers."
+      },
+      {
+        id: 9,
+        month: 3,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "How Do Business Travel and Site Work Affect Women's Career Choices?",
+        summary: "Examine five logistical factors—from advance notice to secure site lodging—that shape women's retention in field-based energy roles.",
+        sections: [
+          {
+            heading: "1. Why Site Logistics Matter for Career Retention",
+            paragraphs: [
+              "Utility-scale solar and wind projects are frequently located in coastal or remote provinces. While field visits provide vital operational experience, unpredictable travel schedules, unvetted transport, and inadequate site facilities disproportionately discourage women from remaining in project execution tracks."
+            ]
+          },
+          {
+            heading: "2. The 5-Factor Site & Travel Impact Matrix",
+            table: {
+              headers: ["Impact Factor", "Common Industry Gap", "Impact on Female Professionals", "Recommended Workplace Standard"],
+              rows: [
+                ["1. Schedule Predictability", "Short-notice trips (< 24 hours)", "High conflict with personal & care duties", "Minimum 5-day advance notice for planned trips"],
+                ["2. Transport Logistics", "Public buses or unvetted local drivers", "Safety concerns during night transit", "Dedicated corporate transport & vetted drivers"],
+                ["3. Site Accommodation", "Shared communal plant housing", "Privacy concerns, lack of secure locks", "Private, lockable rooms in vetted lodging"],
+                ["4. Sanitation Facilities", "Unsegregated temporary site toilets", "Health risks & discomfort during field shifts", "Clean, gender-segregated site sanitation"],
+                ["5. Travel Stipends", "Reimbursements delayed 30–60 days", "Out-of-pocket financial strain on junior staff", "Pre-paid travel allowances or corporate cards"]
+              ]
+            }
+          },
+          {
+            heading: "3. Pre-Trip Site Readiness Checklist",
+            checklist: [
+              "Confirm written transport itineraries, driver details, and check-in schedules prior to departure.",
+              "Save emergency contacts for the site Health, Safety, and Environment (HSE) officer.",
+              "Verify private lodging arrangements and site sanitation access before multi-day deployments."
+            ]
+          }
+        ],
+        terms: [
+          { term: "O&M (Operations and Maintenance)", def: "Ongoing inspection, preventive maintenance, and repair activities keeping power plants operating safely." },
+          { term: "HSE (Health, Safety, and Environment)", def: "The corporate department and regulatory standards governing workplace safety and environmental protection." }
+        ],
+        note: "Field conditions differ substantially between remote utility-scale wind farms and urban commercial rooftop solar installations."
+      },
+      {
+        id: 10,
+        month: 3,
+        audience: "Female Engineers",
+        readTime: "5 min read",
+        title: "Does Personal Protective Equipment (PPE) Fit Women Working in the Energy Sector?",
+        summary: "Review OSHA, ILO, and IRENA safety findings on why unisex PPE creates physical hazards for women—and what female-fitted alternatives look like.",
+        sections: [
+          {
+            heading: "1. Why Ill-Fitting PPE Is a Direct Safety Hazard",
+            paragraphs: [
+              "Personal Protective Equipment is designed to protect workers from electrical arcs, falls, and heavy machinery. However, standard 'unisex' gear is typically modeled on male body dimensions. Oversized gloves reduce tactile grip during wiring, loose coveralls can snag on moving parts, and poorly fitted harnesses compromise fall protection."
+            ]
+          },
+          {
+            heading: "2. Ergonomic & Safety Fit Comparison Table",
+            table: {
+              headers: ["PPE Equipment", "Standard Issue Deficit", "Occupational Safety Hazard", "Female-Fitted Alternative"],
+              rows: [
+                ["Safety Harnesses", "Proportioned for male torso length", "Chest strap pressure & slippage during falls", "Ergonomic female fall-protection harnesses"],
+                ["FR Coveralls", "Oversized waist & sleeve lengths", "Excess fabric catching on rotating equipment", "Female-proportioned flame-resistant workwear"],
+                ["Safety Boots", "Smallest stock often male EU 40", "Foot fatigue, blisters & tripping hazards", "Female-last safety boots (sizes EU 35–39)"],
+                ["Insulating Gloves", "Excess finger length in unisex cuts", "Loss of dexterity during precision electrical work", "Sized high-voltage gloves (Sizes 6–7.5)"],
+                ["Hard Hats", "Standard suspension lacks hair space", "Helmet tilting & reduced impact protection", "Ratchet-suspension helmets with ponytail slot"]
+              ]
+            }
+          },
+          {
+            heading: "3. Two Questions Workers Should Ask Safety Officers",
+            checklist: [
+              "Ask HR/HSE: 'Does the company stock female-fitted PPE across smaller boot, glove, and harness sizes?'",
+              "Ask before deployment: 'What is the lead time and ordering procedure for properly sized safety gear prior to site arrival?'"
+            ]
+          }
+        ],
+        terms: [
+          { term: "FR Coveralls", def: "Flame-Resistant protective garments engineered to self-extinguish and prevent severe burn injuries from electrical arc flashes." },
+          { term: "OSHA / ILO", def: "Occupational Safety and Health Administration and International Labour Organization—leading authorities on workplace safety standards." }
+        ],
+        note: "Ergonomic assessments reference published OSHA, ILO, and IRENA guidelines and do not replace formal workplace HSE inspections."
+      },
+      {
+        id: 11,
+        month: 3,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "Where Do Work Schedules and Family Care Responsibilities Intersect?",
+        summary: "Compare corporate office, hybrid project, and rotational site shift models—and learn practical strategies for negotiating flexible arrangements.",
+        sections: [
+          {
+            heading: "1. Balancing Energy Project Cycles with Caregiving",
+            paragraphs: [
+              "Energy careers span predictable corporate headquarters roles, hybrid project coordination roles, and intensive rotational site shifts. Understanding how each schedule interacts with family care responsibilities helps professionals plan sustainable career paths without sacrificing advancement."
+            ]
+          },
+          {
+            heading: "2. Working Arrangement Comparison Matrix",
+            table: {
+              headers: ["Work Model", "Schedule Structure", "Caregiving Compatibility", "Career Progression Trade-Offs"],
+              rows: [
+                ["Office Corporate Role", "Mon–Fri, 8 AM–5 PM fixed hours", "High daily routine predictability", "Slower direct operational site exposure"],
+                ["Hybrid Project Role", "3 days office / 2 days remote + planned trips", "Moderate flexibility; needs backup care for trips", "Strong balance of visibility and flexibility"],
+                ["Rotational Site Shift", "2 weeks on-site / 1 week off-site rotation", "High disruption to daily home routines", "Rapid technical growth, higher burnout risk"]
+              ]
+            }
+          },
+          {
+            heading: "3. Three-Step Flexible Work Negotiation Plan",
+            checklist: [
+              "Define Core Coverage: Guarantee full availability during peak team collaboration hours (e.g., 9:00 AM–3:00 PM).",
+              "Anchor on Deliverables: Tie performance reviews to concrete output milestones rather than physical desk hours.",
+              "Propose a 60-Day Trial: Suggest a structured two-month pilot period to demonstrate productivity before formalizing."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Core-Hours Policy", def: "A flexible schedule framework requiring all team members to be online during designated core hours while allowing flexible start/end times." },
+          { term: "Rotational Shift", def: "A work schedule alternating continuous blocks of on-site plant duty with extended rest periods off-site." }
+        ],
+        note: "Flexible arrangements vary by employer policy and operational role, and must align with Vietnam's Labor Code regulations."
+      },
+      {
+        id: 12,
+        month: 3,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "What Information Should a Women-Supportive Workplace Publicly Disclose?",
+        summary: "Use a 4-category public disclosure scorecard to distinguish energy companies with verified inclusion practices from generic marketing claims.",
+        sections: [
+          {
+            heading: "1. Moving Beyond Headline Diversity Statements",
+            paragraphs: [
+              "Many energy companies publish broad commitments to diversity in annual sustainability reports. Job applicants can evaluate genuine organizational readiness by checking whether companies publicly disclose concrete policies on salary transparency, seniority breakdown, site safety gear, and grievance channels."
+            ]
+          },
+          {
+            heading: "2. Corporate Public Disclosure Audit Checklist",
+            table: {
+              headers: ["Disclosure Domain", "Key Policy / Metric", "Transparent Best Practice", "Unverified / Omitted Practice"],
+              rows: [
+                ["Recruitment Transparency", "Gender-neutral JDs & pay ranges", "Explicit salary brackets published in job ads", "Vague 'competitive allowance' wording"],
+                ["Career Progression", "Gender share by seniority tier", "Disaggregated percentages (Junior to Executive)", "Single aggregate company-wide percentage"],
+                ["Site & Travel Logistics", "Female PPE & secure site lodging", "Published HSE site travel manual", "No mention of field safety standards"],
+                ["Safety & Grievances", "Anti-harassment & reporting channels", "Independent whistleblower & grievance hotline", "Internal-only, unstated procedures"]
+              ]
+            }
+          },
+          {
+            heading: "3. Applicant Employer Scorecard",
+            checklist: [
+              "Check whether gender statistics separate technical/operational departments from administrative support functions.",
+              "Verify if anti-harassment policies and maternity return-to-work guidelines are accessible on the company's career portal.",
+              "Look for external ESG verification or third-party sustainability audits."
+            ]
+          }
+        ],
+        terms: [
+          { term: "ESG (Environmental, Social, and Governance)", def: "A standardized framework used by investors and stakeholders to evaluate corporate sustainability and ethical governance." },
+          { term: "Whistleblower Channel", def: "A confidential, protected mechanism enabling employees to report misconduct or safety violations without retaliation." }
+        ],
+        note: "The absence of public disclosure reflects external reporting habits and does not prove the absence of internal policies."
+      },
+      {
+        id: 13,
+        month: 4,
+        audience: "Early-Career & HR",
+        readTime: "6 min read",
+        title: "What Steps Does It Take to Move from Staff to Management in Energy?",
+        summary: "Compare career progression milestones across commercial and technical tracks—and see what it takes to transition into P&L leadership.",
+        sections: [
+          {
+            heading: "1. Dual Pathways to Energy Leadership",
+            paragraphs: [
+              "Advancing from entry-level analyst or site engineer to senior management requires shifting from individual task execution to budget accountability, client negotiation, and cross-functional team leadership. Both commercial and technical tracks offer clear advancement ladders."
+            ]
+          },
+          {
+            heading: "2. Side-by-Side Career Pathway Comparison",
+            table: {
+              headers: ["Career Stage", "Commercial / Finance Track", "Technical / Project Delivery Track"],
+              rows: [
+                ["Entry Level (Years 1–3)", "Financial modeling, market research, bid support", "Single-line diagram auditing, site testing, CAD design"],
+                ["Mid-Level (Years 4–7)", "PPA structuring lead, lender due diligence lead", "Package manager, site commissioning lead engineer"],
+                ["Senior / Executive (Years 8+)", "Head of Business Development, Investment Director", "Project Director, Chief Technical Officer (CTO)"]
+              ]
+            }
+          },
+          {
+            heading: "3. Five-Year Career Progression Planning Checklist",
+            checklist: [
+              "Master two advanced financial or technical competencies every 18 months (e.g., debt sculpting or high-voltage testing).",
+              "Volunteer for cross-functional project packages that connect engineering, legal, and financing teams.",
+              "Build commercial fluency—understand how technical decisions impact project IRR and bankability."
+            ]
+          }
+        ],
+        terms: [
+          { term: "P&L (Profit and Loss) Responsibility", def: "Direct management accountability for both revenue generation and cost control within a project or business division." },
+          { term: "Package Manager", def: "A mid-level project leader responsible for delivering a specific technical or commercial workstream (e.g., grid connection or turbine supply)." }
+        ],
+        note: "Career timelines represent common industry benchmarks in Vietnam and vary with company growth and market cycles."
+      },
+      {
+        id: 14,
+        month: 4,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "Who Gets Assigned High-Stakes Projects and Why Does It Matter for Promotion?",
+        summary: "Understand how routine administrative tasks differ from high-visibility commercial and technical assignments—and how to advocate for stretch roles.",
+        sections: [
+          {
+            heading: "1. The Visibility Gap in Project Allocation",
+            paragraphs: [
+              "Promotions in energy firms depend heavily on visible execution in high-stakes workstreams—such as defending financial models before project lenders or leading substation commissioning. When women are disproportionately assigned internal note-taking or travel coordination, their path to senior leadership slows."
+            ]
+          },
+          {
+            heading: "2. Assignment-to-Visibility Mapping Table",
+            table: {
+              headers: ["Assignment Category", "Typical Task Examples", "Executive Visibility", "Impact on Promotion"],
+              rows: [
+                ["Routine Internal Support", "Meeting minutes, travel bookings, routine reporting", "Low (Internal team only)", "Maintains current role; low promotion leverage"],
+                ["High-Stakes Commercial", "Lead PPA negotiation, lender due diligence defense", "High (Executive Board & Banks)", "Direct catalyst for senior promotion"],
+                ["Critical Site Operations", "Lead commissioning engineer for substation", "High (Client & Operations Leads)", "Establishes core technical authority"]
+              ]
+            }
+          },
+          {
+            heading: "3. Stretch Assignment Self-Advocacy Checklist",
+            checklist: [
+              "Document your track record of accurate, on-time delivery on foundational assignments.",
+              "Identify upcoming revenue-critical milestones (such as PPA filings or FAT inspections) needing support.",
+              "Propose co-leading a high-visibility workstream alongside a senior manager to build proven credentials."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Stretch Assignment", def: "A challenging project or responsibility beyond an employee's current scope designed to accelerate leadership growth." },
+          { term: "Lender Due Diligence", def: "Comprehensive technical, legal, and financial verification conducted by banks before approving project loans." }
+        ],
+        note: "Task allocation analysis highlights structural workplace patterns rather than evaluating individual employee capability."
+      },
+      {
+        id: 15,
+        month: 4,
+        audience: "Non-STEM Students",
+        readTime: "5 min read",
+        title: "How Do Mentors and Sponsors Differ in Women's Careers?",
+        summary: "Learn why women are often over-mentored yet under-sponsored—and follow a 3-step strategy to earn executive sponsorship.",
+        sections: [
+          {
+            heading: "1. Advice vs. Advocacy in Technical Industries",
+            paragraphs: [
+              "Global workplace studies reveal a critical distinction: women often receive abundant mentorship (career advice and encouragement) but less sponsorship (senior leaders actively advocating for their promotion and placing them on high-stakes projects). Understanding both roles helps young professionals build stronger support networks."
+            ]
+          },
+          {
+            heading: "2. Mentorship vs. Sponsorship Comparison",
+            table: {
+              headers: ["Dimension", "Mentorship", "Sponsorship"],
+              rows: [
+                ["Primary Function", "Provides guidance, skill feedback & perspective", "Advocates for promotions & assigns high-stakes roles"],
+                ["Organizational Position", "Can be internal/external peer or senior professional", "Must be an internal senior leader with decision power"],
+                ["Action Mechanism", "Talks TO you about career development", "Talks ABOUT you in executive promotion reviews"],
+                ["Primary Outcome", "Skill growth and professional confidence", "Direct advancement and high-visibility placement"]
+              ]
+            }
+          },
+          {
+            heading: "3. Three-Step Strategy to Build Sponsorship",
+            checklist: [
+              "Deliver consistent, error-free results on core analytical or technical deliverables to build executive trust.",
+              "Communicate your specific career ambitions clearly (e.g., leading commercial bids or site commissioning).",
+              "Keep senior decision-makers concisely updated on milestone wins and problem-solving contributions."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Sponsorship", def: "An active relationship in which a senior executive uses their organizational influence to champion a junior colleague's advancement." },
+          { term: "Mentorship", def: "An advisory relationship focused on sharing industry knowledge, feedback, and personal development guidance." }
+        ],
+        note: "Sponsorship develops organically through demonstrated performance and organizational trust rather than formal networking requests alone."
+      },
+      {
+        id: 16,
+        month: 4,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "How Much Do Corporate Female Leadership Disclosures Actually Tell Us?",
+        summary: "Learn how to analyze disaggregated corporate leadership statistics across board, C-suite, middle management, and technical team leads.",
+        sections: [
+          {
+            heading: "1. Looking Beneath Headline Leadership Percentages",
+            paragraphs: [
+              "When an energy enterprise announces '35% female leadership', that aggregate number can mask important structural realities. Women may be concentrated in corporate support roles (HR, Legal, Communications) while investment committees and site engineering leadership remain predominantly male."
+            ]
+          },
+          {
+            heading: "2. Disclosure Definition & Comparability Analysis",
+            table: {
+              headers: ["Leadership Tier", "Standard Definition", "What Aggregate Stats Show", "What Aggregate Stats Obscure"],
+              rows: [
+                ["Board of Directors", "Executive & non-executive board members", "Governance-level representation", "Day-to-day operational decision authority"],
+                ["C-Suite / Executive", "CEO, CFO, CTO, COO positions", "Top executive team composition", "Split between Support vs. P&L operational roles"],
+                ["Middle Management", "Department heads & package managers", "Internal leadership pipeline density", "Promotion velocity and mid-career retention"],
+                ["Technical Team Leads", "Substation & commissioning managers", "Core engineering site leadership", "Often hidden inside general admin figures"]
+              ]
+            }
+          },
+          {
+            heading: "3. Corporate Diversity Disclosure Evaluation Checklist",
+            checklist: [
+              "Check whether female leadership numbers are disaggregated by department (Engineering/Operations vs. Support).",
+              "Look for internal promotion rates compared against external senior hiring.",
+              "Review annual retention rates for female engineers and mid-career project managers."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Disaggregated Data", def: "Data broken down into detailed sub-categories (such as department, seniority tier, or role function) to reveal true patterns." },
+          { term: "Talent Pipeline", def: "The pool of qualified junior and mid-level professionals ready to advance into senior leadership roles." }
+        ],
+        note: "Leadership statistics measure representation levels and do not directly capture individual job satisfaction or pay parity across non-comparable roles."
+      },
+      {
+        id: 17,
+        month: 5,
+        audience: "Women Founders",
+        readTime: "6 min read",
+        title: "Where Can Woman-Led Businesses Participate in the Energy Value Chain?",
+        summary: "Explore five commercial entry segments for women-owned and woman-led SMEs—from ESG & permitting advisory to O&M maintenance and C&I solar.",
+        sections: [
+          {
+            heading: "1. SME Opportunities Across Vietnam's Clean Energy Supply Chain",
+            paragraphs: [
+              "As utility-scale and commercial rooftop solar expand across Vietnam, major developers and Tier-1 EPC contractors rely on agile local small and medium enterprises (SMEs). Distinguishing between 'woman-owned' (≥51% female equity) and 'woman-led' (women in top executive roles) helps map viable entry routes based on capital and technical capacity."
+            ]
+          },
+          {
+            heading: "2. Energy Value Chain Opportunity Map",
+            table: {
+              headers: ["Value Chain Segment", "Specific Products or Services", "Capital & Technical Barrier", "Market Entry Status"],
+              rows: [
+                ["Equipment Distribution", "Inverters, mounting structures, solar cabling", "High inventory working capital required", "Established commercial route"],
+                ["C&I Installation Sub-Contracting", "Rooftop solar mounting & electrical wiring", "Moderate capital; electrical safety licenses", "Established commercial route"],
+                ["ESG & Permitting Advisory", "EIA reports, SIA studies, DPPA compliance", "Low capital; high regulatory expertise", "High-growth potential niche"],
+                ["Auxiliary Site Logistics", "Site transport, worker housing, camp catering", "Low-to-moderate capital; high reliability", "Established local SME route"],
+                ["O&M Support Services", "PV panel cleaning, vegetation control, security", "Moderate capital; trained field workforce", "High-growth potential niche"]
+              ]
+            }
+          },
+          {
+            heading: "3. SME Positioning Checklist for Founders",
+            checklist: [
+              "Select a specialized service niche with clear recurring demand (such as C&I solar O&M or ESG permitting audits).",
+              "Obtain foundational ISO quality and safety certifications prior to pitching Tier-1 contractors.",
+              "Build subcontracting partnerships with established EPCs to build verifiable project references."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Woman-Owned vs. Woman-Led", def: "Woman-owned denotes ≥51% female equity ownership; woman-led refers to businesses led day-to-day by a female CEO or Managing Director." },
+          { term: "C&I (Commercial and Industrial)", def: "Private commercial buildings, malls, and manufacturing factories installing rooftop solar systems." }
+        ],
+        note: "Market entry routes reflect observed SME opportunities in Vietnam; business outcomes depend on capitalization, technical quality, and competitive pricing."
+      },
+      {
+        id: 18,
+        month: 5,
+        audience: "Women Founders",
+        readTime: "6 min read",
+        title: "How Does Working Capital Affect a Woman-Led Energy Business?",
+        summary: "Analyze the 6-stage subcontractor cash-flow cycle, stress-test Net-30 vs. Net-90 payment delays, and review liquidity protection tools.",
+        sections: [
+          {
+            heading: "1. The Energy Subcontractor Cash-Flow Squeeze",
+            paragraphs: [
+              "In energy construction and equipment supply, SMEs often pay suppliers upfront while waiting 60 to 90 days for client invoice settlement—plus 5% to 10% contract retainage held for up to 12–24 months. Managing this working capital gap is critical for SME survival and growth."
+            ]
+          },
+          {
+            heading: "2. Illustrative Sensitivity Analysis: Net-30 vs. Net-90 Payment Terms",
+            paragraphs: [
+              "The typical cash-flow sequence moves from Client Advance (10–20%) → Equipment Outflow (100%) → Installation → Grid Inspection → Final Invoice → Retention Release (5–10% after warranty period)."
+            ],
+            table: {
+              headers: ["Financial Parameter", "Baseline (30-Day Pay)", "Delayed (90-Day Pay)", "Impact on SME Liquidity"],
+              rows: [
+                ["Working Capital Gap", "100M VND covered by cash reserves", "500M VND gap requiring credit facility", "Heavy overdraft & interest cost burden"],
+                ["Supplier Credit Match", "30-day supplier payment matches client", "Supplier demands payment at Day 30", "60-day cash deficit; supply halt risk"],
+                ["Retainage Holding", "5% held for 6 months", "10% held for 12–24 months", "Net profit locked in non-liquid escrow"]
+              ]
+            }
+          },
+          {
+            heading: "3. Liquidity Protection Checklist for SMEs",
+            checklist: [
+              "Negotiate back-to-back payment milestones with equipment suppliers aligned to client disbursements.",
+              "Use bank letters of guarantee instead of cash deductions to cover contract retention requirements.",
+              "Evaluate commercial invoice factoring facilities to unlock cash against verified corporate receivables."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Net-60 / Net-90 Terms", def: "Commercial payment terms requiring full invoice settlement within 60 or 90 calendar days after billing." },
+          { term: "Retainage (Retention Money)", def: "A percentage (typically 5–10%) of contract payments withheld by the client until defect-free warranty completion." }
+        ],
+        note: "The sensitivity table is an illustrative financial planning model and does not represent commercial bank credit terms."
+      },
+      {
+        id: 19,
+        month: 5,
+        audience: "Women Founders",
+        readTime: "5 min read",
+        title: "What Does It Take to Become an Approved Vendor for Energy Companies?",
+        summary: "Prepare a complete vendor pre-qualification dossier across legal compliance, ISO 9001/45001 safety standards, track record, and liquidity.",
+        sections: [
+          {
+            heading: "1. Passing Corporate Procurement Pre-Qualification",
+            paragraphs: [
+              "Major renewable developers and Tier-1 EPC contractors require all suppliers and subcontractors to pass strict vendor pre-qualification before bidding on tenders. Preparing standardized compliance dossiers ahead of tender announcements significantly improves approval speed."
+            ]
+          },
+          {
+            heading: "2. The 4-Domain Supplier Readiness Checklist",
+            table: {
+              headers: ["Verification Domain", "Required Documents", "Minimum Acceptance Standard", "Common Disqualifier"],
+              rows: [
+                ["Legal & Tax Compliance", "Business license, 3-year audited tax filings", "Active registration & clean tax record", "Outstanding tax arrears or disputes"],
+                ["HSE & Quality Systems", "ISO 9001, ISO 45001 certificates, HSE manual", "Documented & certified safety policy", "No formal workplace safety protocol"],
+                ["Project Track Record", "Completion certificates for 3 similar projects", "Verified past operational delivery", "Zero verifiable industry references"],
+                ["Financial Liquidity", "Bank solvency letter, Net-60/90 acceptance", "Positive working capital buffer", "Inability to absorb standard credit terms"]
+              ]
+            }
+          },
+          {
+            heading: "3. Vendor Onboarding Dossier Checklist",
+            checklist: [
+              "Compile notarized corporate registration, tax compliance certificates, and 3 years of financial statements.",
+              "Obtain ISO 45001 occupational safety certification and prepare a project-specific HSE plan.",
+              "Collect signed client completion certificates and performance references from past commercial contracts."
+            ]
+          }
+        ],
+        terms: [
+          { term: "ISO 9001 & ISO 45001", def: "International standards certifying Quality Management Systems (ISO 9001) and Occupational Health & Safety Management Systems (ISO 45001)." },
+          { term: "Pre-Qualification (PQ)", def: "The screening process corporate buyers use to verify a supplier's legal, technical, safety, and financial capacity before inviting bids." }
+        ],
+        note: "Vendor pre-qualification criteria are set independently by purchasing corporations and vary by contract value and risk level."
+      },
+      {
+        id: 20,
+        month: 5,
+        audience: "Women Founders",
+        readTime: "5 min read",
+        title: "How Do Business Networks Help Women Entrepreneurs Reach Clients?",
+        summary: "Compare B2B acquisition channels—from EPC peer referrals to VEA/VSEA industry associations—and allocate founder networking time effectively.",
+        sections: [
+          {
+            heading: "1. Strategic B2B Client Acquisition in Clean Energy",
+            paragraphs: [
+              "For woman-led SMEs, winning energy contracts relies heavily on institutional trust and technical credibility. Because founders balance business development with daily operations, choosing high-conversion networking channels is essential."
+            ]
+          },
+          {
+            heading: "2. B2B Networking Channel Comparison",
+            table: {
+              headers: ["Network Channel", "Primary Mechanism", "Client Acquisition Yield", "Time Commitment"],
+              rows: [
+                ["Industry Associations (VEA/VSEA)", "Working groups & regulatory policy briefings", "High institutional trust; 6–12 mo sales cycle", "Moderate (Monthly meetings)"],
+                ["EPC Subcontractor Referrals", "Peer-to-peer project lead sharing", "High conversion rate; immediate project fit", "Low (Targeted relationship upkeep)"],
+                ["Trade Expos & Exhibitions", "Exhibition booths & B2B matchmaking", "High lead volume; low-to-moderate conversion", "High (Multi-day event prep)"],
+                ["Direct Tender Portals", "Online bidding on corporate procurement portals", "Transparent process; strict price competition", "High (Formal bid preparation)"]
+              ]
+            }
+          },
+          {
+            heading: "3. Recommended Founder Time Allocation Plan",
+            checklist: [
+              "Dedicate 50% of BD time to peer referrals with non-competing consultants and EPC project managers.",
+              "Allocate 30% to active working groups in VEA or VSEA to stay ahead of regulatory shifts.",
+              "Use the remaining 20% selectively for high-fit corporate tender portals and targeted B2B matchmaking."
+            ]
+          }
+        ],
+        terms: [
+          { term: "VEA / VSEA", def: "Vietnam Energy Association and Vietnam Clean Energy Association—key national industry networks connecting energy businesses and policymakers." },
+          { term: "B2B Matchmaking", def: "Structured business-to-business networking sessions pairing buyers (developers/EPCs) with qualified service suppliers." }
+        ],
+        note: "Networking channels generate qualified introductions, while final contract awards depend on technical compliance and commercial competitiveness."
+      },
+      {
+        id: 21,
+        month: 6,
+        audience: "Non-STEM Students",
+        readTime: "5 min read",
+        title: "What Information Are Female Students Missing When Trying to Enter the Energy Sector?",
+        summary: "Map student misconceptions against industry realities across academic degrees, entry skills, site safety, and internship stipends.",
+        sections: [
+          {
+            heading: "1. Bridging the Student Information Deficit",
+            paragraphs: [
+              "Baseline student surveys reveal that many capable female undergraduates never apply to clean energy companies because of missing practical information—assuming engineering degrees are mandatory or lacking clarity on site safety and realistic internship allowances."
+            ]
+          },
+          {
+            heading: "2. Student Information Gap Matrix",
+            table: {
+              headers: ["Information Category", "Common Student Question / Myth", "Verified Industry Reality", "Guidance Toolkit Solution"],
+              rows: [
+                ["Academic Qualification", "'Do I need an engineering degree?'", "Over 45% of sector roles are commercial, legal, or financial", "Non-STEM Career Map (Article 1)"],
+                ["Entry Competencies", "'What skills make my CV stand out?'", "Excel modeling, policy synthesis, GANTT tracking", "Skills-to-Evidence Guide (Article 2)"],
+                ["Site Work Safety", "'Is field travel safe for women?'", "Varies; structured corporate transport & lodging exist", "Interview Verification Guide (Article 4)"],
+                ["Internship Stipends", "'Are energy internships paid?'", "Typically 3M–6M VND/month in HCMC & Hanoi", "Internship Matrix (Article 3)"]
+              ]
+            }
+          },
+          {
+            heading: "3. Student Information Self-Check",
+            checklist: [
+              "Can you name at least three non-engineering entry roles in a solar or wind developer?",
+              "Do you have a quantified CV bullet translating coursework into energy-relevant skills?",
+              "Do you know which safety and travel logistics questions to ask during an HR interview?"
+            ]
+          }
+        ],
+        terms: [
+          { term: "Non-STEM Disciplines", def: "Academic majors outside Science, Technology, Engineering, and Mathematics—including Business, Finance, Law, Economics, and Communications." },
+          { term: "Information Asymmetry", def: "A gap where employers know actual job conditions and expectations, while student applicants lack transparent data." }
+        ],
+        note: "Information gap patterns reflect surveyed student cohorts and serve as an educational design framework for university career centers."
+      },
+      {
+        id: 22,
+        month: 6,
+        audience: "Non-STEM Students",
+        readTime: "5 min read",
+        title: "Does a Career Guide Help Female Students Identify More Options?",
+        summary: "Review pre- and post-pilot evaluation metrics showing how structured career toolkits boost non-STEM role awareness and application readiness.",
+        sections: [
+          {
+            heading: "1. Testing a Practical Response With Student Cohorts",
+            paragraphs: [
+              "To evaluate whether accessible career guides expand opportunities for young women, pilot workshops tested structured career maps and CV translation worksheets with voluntary university cohorts, measuring shifts before and after exposure."
+            ]
+          },
+          {
+            heading: "2. Pre/Post Pilot Evaluation Results",
+            table: {
+              headers: ["Evaluation Indicator", "Pre-Pilot Baseline", "Post-Pilot Outcome", "Observed Cohort Shift"],
+              rows: [
+                ["Non-STEM Role Awareness", "25% could name >2 non-tech roles", "85% identified >4 non-tech roles", "+60 percentage point increase"],
+                ["Application Self-Efficacy", "30% felt qualified to apply", "78% felt qualified via skill translation", "+48 percentage point increase"],
+                ["Tangible CV Readiness", "15% had a tailored energy CV", "65% completed Skills-to-Evidence worksheet", "+50 percentage point increase"]
+              ]
+            }
+          },
+          {
+            heading: "3. Key Toolkit Revisions From Student Feedback",
+            checklist: [
+              "Include plain-English glossary boxes at the bottom of every guide to demystify financial and regulatory acronyms.",
+              "Provide side-by-side 'Before vs. After' resume bullet examples tailored to non-finance majors.",
+              "Keep checklists concise and mobile-friendly for quick reference before interviews."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Self-Efficacy", def: "A person's confidence in their ability to organize and execute the actions required to achieve a specific career goal." },
+          { term: "Pre/Post Pilot Evaluation", def: "A structured assessment measuring participant knowledge and confidence before and after using an educational toolkit." }
+        ],
+        note: "Pilot findings record self-reported shifts among voluntary student cohorts and do not guarantee universal employment placement."
+      },
+      {
+        id: 23,
+        month: 6,
+        audience: "Early-Career & HR",
+        readTime: "5 min read",
+        title: "How Can Employers Improve an Internship Opportunity for Female Students?",
+        summary: "Adopt a 5-dimension model internship framework—combining clear project deliverables, weekly mentorship, transparent stipends, and safe site exposure.",
+        sections: [
+          {
+            heading: "1. Designing High-Impact, Equitable Energy Internships",
+            paragraphs: [
+              "Well-structured internships benefit both students and employers. When energy companies replace vague administrative intern tasks with defined project deliverables, weekly mentor check-ins, and transparent stipends, they attract stronger female applicants and improve full-time conversion."
+            ]
+          },
+          {
+            heading: "2. Annotated Model Internship Framework",
+            table: {
+              headers: ["Program Dimension", "Model Standard Practice", "Benefit to Female Interns", "Employer Feasibility"],
+              rows: [
+                ["Role Definition", "Written project deliverables assigned in Week 1", "Prevents routine admin drift; builds portfolio", "High (Requires ~1 hour prep)"],
+                ["Supervision", "Assigned mentor for weekly 30-min 1-on-1s", "Accelerates learning & workplace confidence", "High (Fits standard workflow)"],
+                ["Compensation", "Transparent stipend (3M–5M VND) stated upfront", "Ensures equitable access across backgrounds", "Moderate (Standard budget item)"],
+                ["Site & Hybrid Access", "Optional supervised site visit with fitted PPE", "Provides safe operational field exposure", "Moderate (Planned logistics)"],
+                ["Conversion Rubric", "Clear performance criteria for full-time offers", "Transparent milestone path to employment", "High (Standard HR practice)"]
+              ]
+            }
+          },
+          {
+            heading: "3. Employer Model Internship Posting Checklist",
+            checklist: [
+              "Specify target majors explicitly (including Business, Finance, Law, and Environmental Studies).",
+              "State monthly stipend, hybrid schedule policy, and contract duration clearly in the posting.",
+              "Outline one concrete project deliverable the intern will complete by the end of the program."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Conversion Rubric", def: "An objective set of performance criteria used by HR and managers to evaluate interns for full-time job offers." },
+          { term: "Admin Drift", def: "When an internship gradually shifts away from substantive skill-building toward routine clerical errands." }
+        ],
+        note: "This model framework offers practical recommendations for voluntary adoption by corporate HR and hiring teams."
+      },
+      {
+        id: 24,
+        month: 6,
+        audience: "Early-Career & HR",
+        readTime: "6 min read",
+        title: "Three Practical Changes to Improve Young Women's Access to Vietnam's Energy Sector",
+        summary: "Synthesize insights across all 24 articles into a 3-pillar action plan for energy employers, university career centers, and industry networks.",
+        sections: [
+          {
+            heading: "1. Synthesizing Evidence Across the Series",
+            paragraphs: [
+              "Across Articles 1 through 23, one conclusion stands out: expanding young women's participation in Vietnam's clean energy transition does not require lowering technical standards. Instead, it requires removing avoidable information gaps, modernizing site logistics, and building structured mentorship pathways."
+            ]
+          },
+          {
+            heading: "2. The 3-Pillar Action Matrix",
+            table: {
+              headers: ["Stakeholder Pillar", "Core Recommended Change", "Implementation Mechanism", "Expected 2-Year Impact"],
+              rows: [
+                ["1. Energy Employers & HR", "Transparent Recruitment & Safe Site Protocols", "Publish non-STEM eligibility, salary bands, travel notice & female PPE stock", "+30% rise in qualified female applicants"],
+                ["2. Universities & Career Centers", "Sector-Specific Career Mapping & Toolkits", "Integrate non-STEM energy guides into business, law & finance counseling", "Expanded student awareness of energy careers"],
+                ["3. Youth & Industry Networks", "Structured Mentorship & Sponsorship Links", "Pair early-career women with senior energy leaders & VEA/VSEA groups", "Higher early-career retention & progression"]
+              ]
+            }
+          },
+          {
+            heading: "3. Stakeholder Implementation Roadmap",
+            checklist: [
+              "Corporate HR Leaders: Standardize job advertisement disclosures and audit female-fitted PPE availability at plant sites.",
+              "University Career Offices: Host joint workshops with renewable developers showcasing finance, legal, and ESG career paths.",
+              "Industry Associations: Launch structured cross-company mentoring circles connecting students with female energy leaders."
+            ]
+          }
+        ],
+        terms: [
+          { term: "Energy Ecosystem", def: "The interconnected network of developers, utilities, equipment makers, regulators, universities, and SMEs driving the energy transition." },
+          { term: "Policy Brief", def: "A concise, evidence-based summary outlining practical recommendations for institutional and corporate decision-makers." }
+        ],
+        note: "Recommendations provide a voluntary strategic framework for employers, academic institutions, and industry networks across Vietnam."
+      }
+    ];
+
+    // 3. CHECKLIST DATA FOR TOOLS TAB
+    const CHECKLIST_ITEMS = [
+      "Master 15 baseline energy terms (PPA, DPPA, PDP8, EPC, COD, LCOE, MW vs. MWh).",
+      "Translate university coursework or club leadership into quantified CV metrics.",
+      "Prepare 1 tangible work sample (2-page regulatory brief or Excel payback model).",
+      "Verify internship/job schedule compatibility and hybrid flexibility.",
+      "Prepare HR question on site travel frequency (%) and advance notice.",
+      "Prepare HR question on site lodging security, transport, and female-fitted PPE.",
+      "Identify 2 early-career women in Vietnam's energy sector for informational outreach."
+    ];
+
+    // STATE
+    let selectedMonth = 'all';
+    let selectedAudience = 'All Readers';
+    let currentArticleId = 1;
+    let checkedItems = new Set();
+
+    // INITIALIZATION
+    window.addEventListener('DOMContentLoaded', () => {
+      renderPathwayCards();
+      renderFilterPills();
+      renderLibrary();
+      renderGlossary('');
+      renderChecklist();
+      updateResumeBuilderTemplate();
+
+      // Track scroll inside modal for reading progress bar
+      const modal = document.getElementById('article-modal');
+      modal.addEventListener('scroll', () => {
+        const scrollTop = modal.scrollTop;
+        const scrollHeight = modal.scrollHeight - modal.clientHeight;
+        const pct = scrollHeight > 0 ? Math.min(100, Math.round((scrollTop / scrollHeight) * 100)) : 0;
+        document.getElementById('reader-progress').style.width = pct + '%';
+      });
+    });
+
+    // TAB SWITCHING
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.dataset.nav === tabName) {
+          btn.classList.add('bg-emeraldEnergy', 'text-white');
+          btn.classList.remove('text-slate-700', 'hover:bg-sageMint', 'hover:text-emeraldEnergy');
+        } else {
+          btn.classList.remove('bg-emeraldEnergy', 'text-white');
+          btn.classList.add('text-slate-700', 'hover:bg-sageMint', 'hover:text-emeraldEnergy');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // RENDER HOME 6-MONTH PATHWAY CARDS
+    function renderPathwayCards() {
+      const container = document.getElementById('pathway-grid');
+      container.innerHTML = MONTHS.map(m => {
+        const monthArticles = ARTICLES.filter(a => a.month === m.id);
+        return `
+          <div class="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-sm hover:shadow-md hover:border-emeraldEnergy/40 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-full bg-sageMint text-emeraldEnergy text-xs font-bold">${m.label}</span>
+                <span class="text-xs font-semibold text-slate-400">Articles ${monthArticles[0].id}–${monthArticles[monthArticles.length - 1].id}</span>
+              </div>
+              <h3 class="font-editorial text-xl font-bold text-charcoal leading-snug mb-2">${m.shortTitle}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">${m.desc}</p>
+              <ul class="space-y-2 border-t border-slate-100 pt-4 mb-6">
+                ${monthArticles.map(a => `
+                  <li>
+                    <button onclick="openArticle(${a.id})" class="text-left text-xs sm:text-sm text-slate-700 hover:text-emeraldEnergy font-medium flex items-start gap-2 group">
+                      <span class="text-solarGold font-bold shrink-0">0${a.id < 10 ? a.id : ''}${a.id >= 10 ? a.id : ''}.</span>
+                      <span class="group-hover:underline">${a.title}</span>
+                    </button>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+            <button onclick="filterByMonthFromHome(${m.id})" class="w-full py-2.5 px-4 rounded-xl bg-offWhite hover:bg-sageMint text-emeraldEnergy border border-slate-200 text-xs font-bold transition">
+              Explore Month ${m.id} Articles →
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterByMonthFromHome(monthId) {
+      selectedMonth = monthId;
+      selectedAudience = 'All Readers';
+      switchTab('library');
+      renderFilterPills();
+      renderLibrary();
+    }
+
+    // RENDER LIBRARY FILTER PILLS
+    function renderFilterPills() {
+      const monthContainer = document.getElementById('month-filters');
+      const allMonths = [{ id: 'all', label: 'All (24)' }, ...MONTHS];
+      monthContainer.innerHTML = allMonths.map(m => {
+        const active = selectedMonth === m.id;
+        return `
+          <button onclick="setMonthFilter(${typeof m.id === 'number' ? m.id : `'all'`})"
+            class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition ${active ? 'bg-emeraldEnergy text-white shadow-sm' : 'bg-offWhite text-slate-700 border border-slate-200 hover:bg-sageMint'}">
+            ${m.label}
+          </button>
+        `;
+      }).join('');
+
+      const audiences = ['All Readers', 'Non-STEM Students', 'Female Engineers', 'Early-Career & HR', 'Women Founders'];
+      const audContainer = document.getElementById('audience-filters');
+      audContainer.innerHTML = audiences.map(aud => {
+        const active = selectedAudience === aud;
+        return `
+          <button onclick="setAudienceFilter('${aud}')"
+            class="px-3 py-1.5 rounded-lg text-xs font-semibold transition ${active ? 'bg-solarGold text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-amber-50'}">
+            ${aud}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setMonthFilter(monthId) {
+      selectedMonth = monthId;
+      renderFilterPills();
+      renderLibrary();
+    }
+
+    function setAudienceFilter(aud) {
+      selectedAudience = aud;
+      renderFilterPills();
+      renderLibrary();
+    }
+
+    function resetFilters() {
+      selectedMonth = 'all';
+      selectedAudience = 'All Readers';
+      document.getElementById('global-search').value = '';
+      renderFilterPills();
+      renderLibrary();
+    }
+
+    function handleGlobalSearch(query) {
+      const trimmed = query.trim();
+      if (trimmed.length > 0 && document.getElementById('tab-library').classList.contains('hidden')) {
+        switchTab('library');
+      }
+      renderLibrary();
+    }
+
+    // RENDER 24-ARTICLE LIBRARY GRID
+    function renderLibrary() {
+      const query = (document.getElementById('global-search').value || '').toLowerCase().trim();
+      const filtered = ARTICLES.filter(art => {
+        const matchMonth = selectedMonth === 'all' || art.month === selectedMonth;
+        const matchAud = selectedAudience === 'All Readers' || art.audience === selectedAudience;
+        const matchQuery = !query ||
+          art.title.toLowerCase().includes(query) ||
+          art.summary.toLowerCase().includes(query) ||
+          art.terms.some(t => t.term.toLowerCase().includes(query) || t.def.toLowerCase().includes(query));
+        return matchMonth && matchAud && matchQuery;
+      });
+
+      document.getElementById('article-count').textContent = filtered.length;
+      const grid = document.getElementById('library-grid');
+      const empty = document.getElementById('library-empty');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+      }
+      empty.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(art => `
+        <div class="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-sm hover:shadow-md hover:border-emeraldEnergy/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-sageMint text-emeraldEnergy text-[11px] font-bold">
+                Month ${art.month} • Article ${art.id}
+              </span>
+              <span class="text-[11px] font-semibold text-slate-400">${art.readTime}</span>
+            </div>
+            <h3 onclick="openArticle(${art.id})" class="font-editorial text-lg sm:text-xl font-bold text-charcoal hover:text-emeraldEnergy cursor-pointer leading-snug mb-2.5 transition">
+              ${art.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              ${art.summary}
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-50 text-solarGold border border-amber-200/70 text-[11px] font-semibold">
+                ${art.audience}
+              </span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[11px] font-medium">
+                ${art.terms.length} Defined Terms
+              </span>
+            </div>
+            <button onclick="openArticle(${art.id})" class="w-full py-2.5 px-4 rounded-xl bg-emeraldEnergy hover:bg-emeraldDark text-white text-xs font-semibold transition flex items-center justify-center gap-2">
+              <span>Read Full Article</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // OPEN FULL ARTICLE READER MODAL
+    function openArticle(articleId) {
+      currentArticleId = articleId;
+      const art = ARTICLES.find(a => a.id === articleId);
+      if (!art) return;
+
+      document.getElementById('modal-badge').textContent = `Month ${art.month} • Article ${art.id} of 24`;
+      document.getElementById('modal-sticky-title').textContent = art.title;
+      document.getElementById('modal-audience').textContent = art.audience;
+      document.getElementById('modal-readtime').textContent = art.readTime;
+      document.getElementById('modal-title').textContent = art.title;
+      document.getElementById('modal-note').textContent = art.note;
+
+      // Render TOC
+      const toc = document.getElementById('modal-toc');
+      toc.innerHTML = art.sections.map((sec, idx) => `
+        <li>
+          <a href="#sec-${idx}" class="text-slate-600 hover:text-emeraldEnergy font-medium block leading-snug transition">
+            ${sec.heading}
+          </a>
+        </li>
+      `).join('') + `
+        <li>
+          <a href="#modal-terms-box" class="text-solarGold hover:underline font-semibold block pt-1">
+            Key Terminologies (${art.terms.length})
+          </a>
+        </li>
+      `;
+
+      // Render Sections
+      const contentEl = document.getElementById('modal-content');
+      contentEl.innerHTML = art.sections.map((sec, idx) => {
+        let html = `<h3 id="sec-${idx}">${sec.heading}</h3>`;
+        if (sec.paragraphs) {
+          html += sec.paragraphs.map(p => `<p>${p}</p>`).join('');
+        }
+        if (sec.table) {
+          html += `
+            <div class="my-6 overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+              <table class="min-w-full divide-y divide-slate-200 text-left text-xs sm:text-sm">
+                <thead class="bg-emeraldEnergy text-white">
+                  <tr>
+                    ${sec.table.headers.map(h => `<th class="px-4 py-3 font-semibold tracking-wide">${h}</th>`).join('')}
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  ${sec.table.rows.map((row, rIdx) => `
+                    <tr class="${rIdx % 2 === 1 ? 'bg-offWhite' : 'bg-white'}">
+                      ${row.map((cell, cIdx) => `<td class="px-4 py-3 text-slate-700 leading-relaxed ${cIdx === 0 ? 'font-semibold text-charcoal' : ''}">${cell}</td>`).join('')}
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+        }
+        if (sec.checklist) {
+          html += `
+            <div class="my-5 p-5 rounded-2xl bg-offWhite border border-slate-200 space-y-2.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-emeraldEnergy mb-1">Interactive Action Checklist</div>
+              ${sec.checklist.map((item, cIdx) => `
+                <label class="flex items-start gap-3 cursor-pointer text-sm text-slate-700 leading-relaxed">
+                  <input type="checkbox" class="mt-1 w-4 h-4 rounded border-slate-300 text-emeraldEnergy focus:ring-emeraldEnergy" />
+                  <span>${item}</span>
+                </label>
+              `).join('')}
+            </div>
+          `;
+        }
+        return html;
+      }).join('');
+
+      // Render Terminologies Box
+      const termsList = document.getElementById('modal-terms-list');
+      termsList.innerHTML = art.terms.map(t => `
+        <div class="bg-white p-4 rounded-xl border border-sageBorder/80">
+          <dt class="text-sm font-bold text-emeraldEnergy">${t.term}</dt>
+          <dd class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">${t.def}</dd>
+        </div>
+      `).join('');
+
+      // Prev / Next buttons state
+      const isFirst = articleId <= 1;
+      const isLast = articleId >= ARTICLES.length;
+      ['prev-article-btn', 'bottom-prev-btn'].forEach(id => document.getElementById(id).disabled = isFirst);
+      ['next-article-btn', 'bottom-next-btn'].forEach(id => document.getElementById(id).disabled = isLast);
+
+      const modal = document.getElementById('article-modal');
+      modal.classList.remove('hidden');
+      modal.scrollTop = 0;
+      document.getElementById('reader-progress').style.width = '0%';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticle() {
+      document.getElementById('article-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function navigateArticle(delta) {
+      const nextId = currentArticleId + delta;
+      if (nextId >= 1 && nextId <= ARTICLES.length) {
+        openArticle(nextId);
+      }
+    }
+
+    // CAREER TOOLS: RESUME BUILDER
+    function updateResumeBuilderTemplate() {
+      const skill = document.getElementById('tool-skill').value;
+      const presets = {
+        data: { context: "senior thesis survey", metric: "100 households", outcome: "3 actionable household electricity-saving recommendations" },
+        policy: { context: "environmental law seminar", metric: "2-page executive brief", outcome: "key compliance takeaways on Vietnam's Direct Power Purchase Agreement (DPPA) decree" },
+        coord: { context: "university clean-tech symposium", metric: "10-member team and 20M VND budget", outcome: "on-time delivery for 500 attendees using GANTT milestone tracking" },
+        esg: { context: "student sustainability campaign", metric: "5-part digital series", outcome: "over 2,000 organic reader engagements on carbon reduction" }
+      };
+      const p = presets[skill];
+      document.getElementById('tool-context').placeholder = `e.g., ${p.context}`;
+      document.getElementById('tool-metric').placeholder = `e.g., ${p.metric}`;
+      document.getElementById('tool-outcome').placeholder = `e.g., ${p.outcome}`;
+    }
+
+    function generateResumeBullet() {
+      const skill = document.getElementById('tool-skill').value;
+      const context = document.getElementById('tool-context').value.trim() || "university research project";
+      const metric = document.getElementById('tool-metric').value.trim() || "100+ data points";
+      const outcome = document.getElementById('tool-outcome').value.trim() || "3 actionable clean energy recommendations";
+
+      const templates = {
+        data: `"Constructed a structured Excel dataset analyzing energy metrics across ${metric} for a ${context}, generating ${outcome}."`,
+        policy: `"Authored a concise executive summary (${metric}) for a ${context}, synthesizing regulatory implications and delivering ${outcome}."`,
+        coord: `"Coordinated a cross-functional ${context} managing ${metric} via structured GANTT milestone schedules, achieving ${outcome}."`,
+        esg: `"Designed and executed a sustainability communications initiative (${metric}) during a ${context}, driving ${outcome}."`
+      };
+      document.getElementById('resume-output').textContent = templates[skill];
+      showToast("Resume bullet generated!");
+    }
+
+    // CAREER TOOLS: INTERACTIVE CHECKLIST
+    function renderChecklist() {
+      const container = document.getElementById('interactive-checklist');
+      container.innerHTML = CHECKLIST_ITEMS.map((item, idx) => {
+        const isChecked = checkedItems.has(idx);
+        return `
+          <label onclick="toggleChecklistItem(${idx})" class="flex items-start gap-3 p-3 rounded-xl border ${isChecked ? 'bg-sageMint/50 border-sageBorder' : 'bg-offWhite border-slate-200'} cursor-pointer transition">
+            <input type="checkbox" ${isChecked ? 'checked' : ''} class="mt-0.5 w-4 h-4 rounded border-slate-300 text-emeraldEnergy focus:ring-emeraldEnergy pointer-events-none" />
+            <span class="text-xs sm:text-sm leading-relaxed ${isChecked ? 'line-through text-slate-400' : 'text-slate-700 font-medium'}">${item}</span>
+          </label>
+        `;
+      }).join('');
+      const pct = Math.round((checkedItems.size / CHECKLIST_ITEMS.length) * 100);
+      document.getElementById('checklist-progress-text').textContent = `${checkedItems.size} / ${CHECKLIST_ITEMS.length} Completed`;
+      document.getElementById('checklist-progress-bar').style.width = pct + '%';
+    }
+
+    function toggleChecklistItem(idx) {
+      if (checkedItems.has(idx)) checkedItems.delete(idx);
+      else checkedItems.add(idx);
+      renderChecklist();
+    }
+
+    function resetChecklist() {
+      checkedItems.clear();
+      renderChecklist();
+    }
+
+    function copyInterviewQuestions() {
+      const questions = [
+        "1. Travel Frequency & Notice: Could you share the expected ratio of site vs. office work, and how much advance notice is provided for field trips?",
+        "2. Site Logistics & Safety: What arrangements are standard for transportation, private lodging, and female-fitted safety gear during site visits?",
+        "3. Commissioning Support: How does the team manage workloads during intensive project delivery or commissioning phases?",
+        "4. Onboarding & Mentorship: What onboarding or mentorship structures are in place for junior hires from non-engineering backgrounds?"
+      ].join("\n");
+      copyRawText(questions, "4 HR interview questions copied!");
+    }
+
+    // GLOSSARY (A-Z) AGGREGATED FROM ALL 24 ARTICLES
+    function renderGlossary(filterText) {
+      const q = (filterText || '').toLowerCase().trim();
+      const termMap = new Map();
+      ARTICLES.forEach(art => {
+        art.terms.forEach(t => {
+          if (!termMap.has(t.term)) {
+            termMap.set(t.term, { term: t.term, def: t.def, articles: [art.id] });
+          } else {
+            const existing = termMap.get(t.term);
+            if (!existing.articles.includes(art.id)) existing.articles.push(art.id);
+          }
+        });
+      });
+
+      const sortedTerms = Array.from(termMap.values())
+        .sort((a, b) => a.term.localeCompare(b.term))
+        .filter(item => !q || item.term.toLowerCase().includes(q) || item.def.toLowerCase().includes(q));
+
+      const grid = document.getElementById('glossary-grid');
+      grid.innerHTML = sortedTerms.map(item => `
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-editorial text-lg font-bold text-emeraldEnergy">${item.term}</h3>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">${item.def}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+            <span class="text-[11px] font-semibold text-slate-400">Appears in:</span>
+            ${item.articles.map(id => `
+              <button onclick="openArticle(${id})" class="px-2 py-0.5 rounded bg-sageMint hover:bg-emeraldEnergy hover:text-white text-emeraldEnergy text-[11px] font-bold transition">
+                Article ${id}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // CLIPBOARD & TOAST HELPERS
+    function copyTextById(elId) {
+      const text = document.getElementById(elId).textContent.trim();
+      copyRawText(text, "Copied to clipboard!");
+    }
+
+    function copyRawText(text, msg) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      showToast(msg);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = msg;
+      toast.classList.remove('hidden', 'translate-y-2', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.classList.add('hidden'), 300);
+      }, 2400);
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !document.getElementById('article-modal').classList.contains('hidden')) {
+        closeArticle();
+      }
+    });
+  </script>
+</body>
+</html>
